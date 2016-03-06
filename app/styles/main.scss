@@ -1,0 +1,95 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+$fa-font-path: "../bower_components/components-font-awesome/fonts";
+    // bower:scss
+    @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+    @import "components-font-awesome/scss/font-awesome.scss";
+    @import "susy/sass/_susy.scss";
+    // endbower
+
+@import "utils/typography.scss";
+@import "utils/vars.scss";
+@import "compass";
+
+body {
+    font-family: $opensans-family;
+}
+
+.grey-section {
+    background: $lightest-gray;
+    color: $gray;
+    a {
+        color: $gray;
+    }
+}
+
+.highlight {
+    color: $light-blue;
+}
+
+#header {
+    .logo {
+        display: inline-block;
+        padding: 20px 0;
+        font-size: 42px;
+        font-weight: bold;
+        color: $dark-gray;
+        word-break: break-word;
+        line-height: 1;
+        letter-spacing: -0.05em;
+        img {
+            margin-right: 10px;
+        }
+    }
+    nav {
+        padding: 30px 0;
+    }
+}
+
+#top-line {
+    margin-top: 10px;
+    padding: 9px 0;
+    position: relative;
+    &:before {
+        position: absolute;
+        content: '';
+        display: block;
+        left: 0;
+        right: 0;
+        height: 10px;
+        top: -10px;
+        @include background-image(linear-gradient(to right, $light-blue 0%, $purple 100%));
+    }
+    .fa {
+        font-size: 16px;
+    }
+    .col-md-9 {
+        span {
+            padding-left: 33px;
+            &:first-of-type {
+                padding-left: 0;
+            }
+            .fa {
+                padding-right: 6px;
+            }
+        }
+    }
+}
+
+.social {
+    a {
+        margin-left: 20px;
+        &:first-of-type {
+            margin-left: 0;
+        }
+        @include transition(all 0.3s ease-in-out 0s);
+    }
+}
+
+@media (min-width: $medium-bp) {
+    .text-md-left {
+        text-align: left;
+    }
+    .text-md-right {
+        text-align: right;
+    }
+}
